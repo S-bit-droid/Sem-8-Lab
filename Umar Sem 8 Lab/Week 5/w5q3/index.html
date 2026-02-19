@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Name Page</title>
+
+    <script>
+      function openPage() {
+        var name = document.getElementById("name").value;
+        window.location.href = "welcome.html?name=" + encodeURIComponent(name);
+      }
+
+      function resetName() {
+        document.getElementById("name").value = "Victoria";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h2>Enter Your Name</h2>
+    Name:
+    <input type="text" id="name" value="Victoria" /><br /><br />
+
+    <button onclick="openPage()">Enter</button>
+    <button onclick="resetName()">Reset</button>
+  </body>
+</html>
