@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Details Form</title>
+<style>
+body{
+    background-color:#dcdcdc;
+    font-family:Arial;
+}
+
+h2{
+    text-align:center;
+    text-decoration:underline;
+}
+
+table{
+    margin:auto;
+}
+
+input, select, textarea{
+    padding:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Details</h2>
+
+<form>
+<table cellspacing="10">
+
+<tr>
+<td>Your Name:</td>
+<td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+<td>Your Address:</td>
+<td>
+<input type="text" name="address1"><br><br>
+<input type="text" name="address2">
+</td>
+</tr>
+
+<tr>
+<td>Your Gender:</td>
+<td>
+Male <input type="radio" name="gender">
+Female <input type="radio" name="gender">
+</td>
+</tr>
+
+<tr>
+<td>Your Country:</td>
+<td>
+<select>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+<option>Canada</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Your Opinion:</td>
+<td>
+<textarea rows="4" cols="30"></textarea>
+</td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>

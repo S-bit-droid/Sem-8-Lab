@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting According to Time</title>
+</head>
+<body>
+
+<h2 id="time"></h2>
+<h3 id="message"></h3>
+
+<script>
+
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+
+    document.getElementById("time").innerHTML =
+        "Current Time: " + hours + ":" + minutes + ":" + seconds;
+
+    var greeting;
+
+    if (hours < 12) {
+        greeting = "Good Morning";
+    } 
+    else if (hours < 17) {
+        greeting = "Good Afternoon";
+    } 
+    else if (hours < 20) {
+        greeting = "Good Evening";
+    } 
+    else {
+        greeting = "Good Night";
+    }
+
+    document.getElementById("message").innerHTML = greeting;
+</script>
+
+</body>
+</html>

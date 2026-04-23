@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" value="5">
+    <button onclick="showTable()">Show Table</button>
+
+    <div id="table"></div>
+
+    <script>
+        function showTable() {
+            let num = document.getElementById("number").value;
+            let output = "<table border='1' cellpadding='5'>";
+            for (let i = 1; i <= 10; i++) {
+                output += "<tr><td>" + num + " x " + i + " = " + (num * i) + "</td></tr>";
+            }
+            output += "</table>";
+            document.getElementById("table").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

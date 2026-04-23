@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Two Frame Webpage</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    /* Left Frame */
+    .sidebar {
+        width: 30%;
+        background: #2c3e50;
+        color: white;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        text-decoration: none;
+        background: #34495e;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .sidebar a:hover {
+        background: #1abc9c;
+    }
+
+    /* Right Frame */
+    .content {
+        width: 70%;
+        padding: 20px;
+        background: #ecf0f1;
+    }
+
+    .form-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 60%;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #2980b9;
+    }
+
+    .result {
+        margin-top: 20px;
+        padding: 10px;
+        background: #dff9fb;
+        border-left: 5px solid #22a6b3;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT FRAME -->
+    <div class="sidebar">
+        <h2>Forms</h2>
+        <a href="#" onclick="showForm('form1')">Personal Info Form</a>
+        <a href="#" onclick="showForm('form2')">Login Form</a>
+    </div>
+
+    <!-- RIGHT FRAME -->
+    <div class="content" id="contentArea">
+        <h2>Select a form from the left</h2>
+    </div>
+
+</div>
+
+<script>
+function showForm(formType) {
+    let content = document.getElementById("contentArea");
+
+    if (formType === 'form1') {
+        content.innerHTML = `
+        <div class="form-box">
+            <h2>Personal Info</h2>
+            <form onsubmit="return validateForm1()">
+                <input type="text" id="name" placeholder="Enter Name">
+                <input type="number" id="age" placeholder="Enter Age">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="result1" class="result"></div>
+        </div>`;
+    }
+
+    if (formType === 'form2') {
+        content.innerHTML = `
+        <div class="form-box">
+            <h2>Login Form</h2>
+            <form onsubmit="return validateForm2()">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+            <div id="result2" class="result"></div>
+        </div>`;
+    }
+}
+
+function validateForm1() {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+
+    let result = document.getElementById("result1");
+
+    if (name === "" || age === "") {
+        result.innerHTML = "❌ Please fill all fields";
+        return false;
+    }
+
+    if (age <= 0) {
+        result.innerHTML = "❌ Age must be positive";
+        return false;
+    }
+
+    result.innerHTML = "✅ Submitted Successfully!<br>Name: " + name + "<br>Age: " + age;
+    return false;
+}
+
+function validateForm2() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let result = document.getElementById("result2");
+
+    if (username === "" || password === "") {
+        result.innerHTML = "❌ All fields are required";
+        return false;
+    }
+
+    if (password.length < 6) {
+        result.innerHTML = "❌ Password must be at least 6 characters";
+        return false;
+    }
+
+    result.innerHTML = "✅ Login Successful! Welcome " + username;
+    return false;
+}
+</script>
+
+</body>
+</html>

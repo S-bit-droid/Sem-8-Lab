@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABC.COM - Welcome</title>
+</head>
+<body>
+
+<h2>Welcome to ABC.COM</h2>
+<p>ABC.COM is a leading platform for your needs. We provide excellent services and valuable information.</p>
+
+<form action="q6(3).html" method="get">
+    <input type="hidden" name="username" id="hiddenUsername">
+    <input type="submit" value="Next">
+</form>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+
+    document.getElementById('hiddenUsername').value = username || '';
+</script>
+
+</body>
+</html>

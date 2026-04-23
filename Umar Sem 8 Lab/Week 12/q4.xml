@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="q4(1).xsl"?>
+<catalog>
+    <cd>
+        <title>Midnights</title>
+        <artist>Taylor Swift</artist>
+        <country>USA</country>
+        <company>Republic Records</company>
+        <price>15.99</price>
+        <year>2022</year>
+    </cd>
+
+    <cd>
+        <title>Thriller</title>
+        <artist>Michael Jackson</artist>
+        <country>USA</country>
+        <company>Epic</company>
+        <price>12.50</price>
+        <year>1982</year>
+    </cd>
+
+    <cd>
+        <title>Divide</title>
+        <artist>Ed Sheeran</artist>
+        <country>UK</country>
+        <company>Asylum</company>
+        <price>14.00</price>
+        <year>2017</year>
+    </cd>
+</catalog>

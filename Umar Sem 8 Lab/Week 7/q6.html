@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day of the Week</title>
+</head>
+<body>
+    <h2>Find Day of the Week</h2>
+
+    <button onclick="getDayOfWeek()">Check Day</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getDayOfWeek() {
+            let dayNum = parseInt(prompt("Enter a day number (1-31):"));
+
+            if (isNaN(dayNum) || dayNum < 1 || dayNum > 31) {
+                alert("Please enter a valid number between 1 and 31.");
+                return;
+            }
+
+            let today = new Date();
+            let year = today.getFullYear();
+            let month = today.getMonth();
+
+            let date = new Date(year, month, dayNum);
+
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            document.getElementById("result").innerText = 
+                "Day " + dayNum + " of this month is a " + days[date.getDay()] + ".";
+        }
+    </script>
+</body>
+</html>

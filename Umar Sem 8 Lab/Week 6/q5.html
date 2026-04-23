@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Compose</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .compose-box {
+            width: 500px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 20px 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 70px;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 350px;
+            padding: 5px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+            vertical-align: top;
+        }
+
+        .btn {
+            margin-left: 75px;
+            padding: 6px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="compose-box">
+        <h2>Compose Mail</h2>
+
+        <div class="form-group">
+            <label>To</label>
+            <input type="text" placeholder="Recipient email">
+        </div>
+
+        <div class="form-group">
+            <label>Copy</label>
+            <input type="text" placeholder="CC email">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Write your message here..."></textarea>
+        </div>
+
+        <button class="btn">SEND</button>
+    </div>
+
+</body>
+</html>

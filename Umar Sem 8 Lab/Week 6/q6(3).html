@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABC.COM - User</title>
+</head>
+<body>
+
+<h2 id="welcomeMessage"></h2>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+
+    if (username) {
+        document.getElementById('welcomeMessage').textContent = `Hello ${username}, Welcome to ABC.COM!`;
+    } else {
+        document.getElementById('welcomeMessage').textContent = 'Welcome to ABC.COM!';
+    }
+</script>
+
+</body>
+</html>
+

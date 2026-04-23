@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submitted Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-box">
+    <h2>Your Responses</h2>
+    <p id="name"></p>
+    <p id="age"></p>
+    <p id="color"></p>
+    <p id="hobby"></p>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("name").textContent =
+        "Name: " + params.get("name");
+
+    document.getElementById("age").textContent =
+        "Age: " + params.get("age");
+
+    document.getElementById("color").textContent =
+        "Favorite Color: " + params.get("color");
+
+    document.getElementById("hobby").textContent =
+        "Hobby: " + params.get("hobby");
+</script>
+
+</body>
+</html>

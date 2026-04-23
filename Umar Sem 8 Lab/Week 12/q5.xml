@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="q5(1).xsl"?>
+
+<books>
+    <book>
+        <title>XML Basics</title>
+        <author>John Smith</author>
+        <price>300</price>
+    </book>
+    <book>
+        <title>Web Development</title>
+        <author>Jane Doe</author>
+        <price>500</price>
+    </book>
+</books>

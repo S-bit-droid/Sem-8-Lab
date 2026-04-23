@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Web Page</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+    <h2>Interactive Page</h2>
+
+    <select onchange="location = this.value;">
+        <option value="">-- Select Page --</option>
+        <option value="https://www.google.com">Google</option>
+        <option value="https://www.wikipedia.org">Wikipedia</option>
+        <option value="https://www.youtube.com">YouTube</option>
+    </select>
+
+    <br><br>
+
+    <img 
+        src="image1.jpg"
+
+        onmouseover="this.src='image2.jpg';"
+        onmouseout="this.src='image1.jpg';"
+
+        onclick="this.style.transform='scale(1.3) rotate(10deg)'; 
+                 setTimeout(() => this.style.transform='scale(1)', 500);"
+        
+        style="width:200px; height:200px; cursor:pointer; transition:0.5s;"
+    >
+
+</body>
+</html>

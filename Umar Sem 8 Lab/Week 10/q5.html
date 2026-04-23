@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Year Calendar</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+        td, th {
+            border: 1px solid #333;
+            padding: 5px 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .month {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Year Calendar</h2>
+
+    <label>Enter Year: </label>
+    <input type="number" id="yearInput" placeholder="e.g. 2026">
+    <button onclick="showCalendar()">Show Calendar</button>
+
+    <div id="calendarContainer"></div>
+
+    <script>
+        function showCalendar() {
+            const year = document.getElementById("yearInput").value;
+            if (!year) {
+                alert("Please enter a year!");
+                return;
+            }
+
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            const container = document.getElementById("calendarContainer");
+            container.innerHTML = "";
+
+            for (let month = 0; month < 12; month++) {
+                const firstDay = new Date(year, month, 1).getDay();
+                const lastDate = new Date(year, month + 1, 0).getDate();
+
+                let table = `<div class="month"><h3>${months[month]} ${year}</h3>`;
+                table += "<table><tr>";
+
+                for (let d = 0; d < 7; d++) {
+                    table += `<th>${days[d]}</th>`;
+                }
+                table += "</tr><tr>";
+
+                for (let i = 0; i < firstDay; i++) {
+                    table += "<td></td>";
+                }
+
+                let dayCount = firstDay;
+                for (let date = 1; date <= lastDate; date++) {
+                    table += `<td>${date}</td>`;
+                    dayCount++;
+                    if (dayCount % 7 === 0) table += "</tr><tr>";
+                }
+
+                table += "</tr></table></div>";
+                container.innerHTML += table;
+            }
+        }
+    </script>
+
+</body>
+</html>

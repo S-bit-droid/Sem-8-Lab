@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calendar</title>
+    <script>
+        function generateCalendar() {
+            let month = document.getElementById("month").value;
+            let year = document.getElementById("year").value;
+
+            let date = new Date(year, month, 1);
+            let table = "<table border='1'><tr>";
+
+            let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            for (let d of days) {
+                table += "<th>" + d + "</th>";
+            }
+            table += "</tr><tr>";
+
+            for (let i = 0; i < date.getDay(); i++) {
+                table += "<td></td>";
+            }
+
+            while (date.getMonth() == month) {
+                table += "<td>" + date.getDate() + "</td>";
+
+                if (date.getDay() == 6) {
+                    table += "</tr><tr>";
+                }
+
+                date.setDate(date.getDate() + 1);
+            }
+
+            table += "</tr></table>";
+            document.getElementById("calendar").innerHTML = table;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Calendar Generator</h2>
+
+    <select id="month">
+        <option value="0">Jan</option>
+        <option value="1">Feb</option>
+        <option value="2">Mar</option>
+        <option value="3">Apr</option>
+        <option value="4">May</option>
+        <option value="5">Jun</option>
+        <option value="6">Jul</option>
+        <option value="7">Aug</option>
+        <option value="8">Sep</option>
+        <option value="9">Oct</option>
+        <option value="10">Nov</option>
+        <option value="11">Dec</option>
+    </select>
+
+    <select id="year">
+        <script>
+            for (let y = 2000; y <= 2030; y++) {
+                document.write("<option value='" + y + "'>" + y + "</option>");
+            }
+        </script>
+    </select>
+
+    <button onclick="generateCalendar()">Show Calendar</button>
+
+    <div id="calendar"></div>
+
+</body>
+
+</html>

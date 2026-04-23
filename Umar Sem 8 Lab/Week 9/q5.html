@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2575fc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Questionnaire</h2>
+
+    <form action="q51.html" method="GET">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Favorite Color:</label>
+        <select name="color">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+        </select>
+
+        <label>Hobby:</label>
+        <input type="text" name="hobby">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
